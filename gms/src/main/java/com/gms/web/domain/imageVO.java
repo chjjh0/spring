@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Component
 @Data
-public class image {
+public class imageVO {
 	private String 
 	imgseq,
 	imgName, 

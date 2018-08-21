@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Component
 @Data
-public class Member {
+public class MemberVO {
 	private String memberId,teamId,name,ssn,roll,pass,age,gender,subject;
 
 	@Override
