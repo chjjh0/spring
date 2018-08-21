@@ -2,7 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
   <head>
-
+	<link rel="stylesheet icon" href="${context}/resources/img/favicon.ico">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<%-- <link rel="stylesheet" href="${context}/resources/css/style.css" /> --%>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<%-- <script src="${context}/resources/js/app.js"></script> --%>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -38,7 +44,7 @@
           <a class="js-scroll-trigger" href="#page-top">Home</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#about">About</a>
+          <a class="js-scroll-trigger" href="#about" id="login_btn">Login</a>
         </li>
         <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#services">Services</a>
@@ -250,7 +256,12 @@
 
     <!-- Custom scripts for this template -->
     <script src="${context}/resources/js/stylish-portfolio.min.js"></script>
-
+	<script>
+	$('#login_btn')
+	.on('click', function(){
+		alert('로그인 성공');
+	});
+	</script>
   </body>
 
 </html>
