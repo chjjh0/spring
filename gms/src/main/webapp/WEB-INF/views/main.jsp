@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="en">
+
   <head>
 	<link rel="stylesheet icon" href="${context}/resources/img/favicon.ico">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -14,255 +16,106 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stylish Portfolio - Start Bootstrap Template</title>
+    <title>Business Casual - Start Bootstrap Theme</title>
 
-    <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap core CSS -->
     <link href="${context}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="${context}/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="${context}/resources/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="${context}/resources/css/stylish-portfolio.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="${context}/resources/css/business-casual.min.css" rel="stylesheet">
 
   </head>
 
-  <body id="page-top">
+  <body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">A Free Bootstrap 4 Business Theme</span>
+      <span class="site-heading-lower">Business Casual</span>
+    </h1>
 
     <!-- Navigation -->
-    <a class="menu-toggle rounded" href="#">
-      <i class="fas fa-bars"></i>
-    </a>
-    <nav id="sidebar-wrapper">
-      <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-          <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#page-top">Home</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#about" id="login_btn">Login</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#services">Services</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#contact">Contact</a>
-        </li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="index.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="${context}/resources/html/about.html" id="about_btn">About</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="store.html">Store</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-
-    <!-- Header -->
-    <header class="masthead d-flex">
-      <div class="container text-center my-auto">
-        <h1 class="mb-1">Stylish Portfolio</h1>
-        <h3 class="mb-5">
-          <em>A Free Bootstrap Theme by Start Bootstrap</em>
-        </h3>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+   <!-- Header -->
+    <section class="page-section clearfix">
+      <div class="container">
+        <div class="intro">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="${context}/resources/img/intro.jpg" alt="">
+          <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Fresh Coffee</span>
+              <span class="section-heading-lower">Worth Drinking</span>
+            </h2>
+            <p class="mb-3">Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!
+            </p>
+            <div class="intro-button mx-auto">
+              <a class="btn btn-primary btn-xl" href="#">Visit Us Today!</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="overlay"></div>
-    </header>
-
-    <!-- About -->
-    <section class="content-section bg-light" id="about">
-      <div class="container text-center">
+    </section>
+	<!-- Content -->
+    <section class="page-section cta">
+      <div class="container">
         <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-            <p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-              <a href="https://unsplash.com/">Unsplash</a>!</p>
-            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Our Promise</span>
+                <span class="section-heading-lower">To You</span>
+              </h2>
+              <p class="mb-0">When you walk into our shop to start your day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients. If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Services -->
-    <section class="content-section bg-primary text-white text-center" id="services">
+	<!-- Footer -->
+    <footer class="footer text-faded text-center py-5">
       <div class="container">
-        <div class="content-section-heading">
-          <h3 class="text-secondary mb-0">Services</h3>
-          <h2 class="mb-5">What We Offer</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-screen-smartphone"></i>
-            </span>
-            <h4>
-              <strong>Responsive</strong>
-            </h4>
-            <p class="text-faded mb-0">Looks great on any screen size!</p>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-pencil"></i>
-            </span>
-            <h4>
-              <strong>Redesigned</strong>
-            </h4>
-            <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-like"></i>
-            </span>
-            <h4>
-              <strong>Favorited</strong>
-            </h4>
-            <p class="text-faded mb-0">Millions of users
-              <i class="fas fa-heart"></i>
-              Start Bootstrap!</p>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-mustache"></i>
-            </span>
-            <h4>
-              <strong>Question</strong>
-            </h4>
-            <p class="text-faded mb-0">I mustache you a question...</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Callout -->
-    <section class="callout">
-      <div class="container text-center">
-        <h2 class="mx-auto mb-5">Welcome to
-          <em>your</em>
-          next website!</h2>
-        <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/template-overviews/stylish-portfolio/">Download Now!</a>
-      </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section class="content-section" id="portfolio">
-      <div class="container">
-        <div class="content-section-heading text-center">
-          <h3 class="text-secondary mb-0">Portfolio</h3>
-          <h2 class="mb-5">Recent Projects</h2>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Stationary</h2>
-                  <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
-                </span>
-              </span>
-              <img class="img-fluid" src="${context}/resources/img/portfolio-1.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Ice Cream</h2>
-                  <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
-                </span>
-              </span>
-              <img class="img-fluid" src="${context}/resources/img/portfolio-2.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Strawberries</h2>
-                  <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
-                </span>
-              </span>
-              <img class="img-fluid" src="${context}/resources/img/portfolio-3.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Workspace</h2>
-                  <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                </span>
-              </span>
-              <img class="img-fluid" src="${context}/resources/img/portfolio-4.jpg" alt="">
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="content-section bg-primary text-white">
-      <div class="container text-center">
-        <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-        <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
-        <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
-      </div>
-    </section>
-
-    <!-- Map -->
-    <section id="contact" class="map">
-      <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-      <br/>
-      <small>
-        <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-      </small>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer text-center">
-      <div class="container">
-        <ul class="list-inline mb-5">
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="#">
-              <i class="icon-social-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="#">
-              <i class="icon-social-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white" href="#">
-              <i class="icon-social-github"></i>
-            </a>
-          </li>
-        </ul>
-        <p class="text-muted small mb-0">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 small">Copyright &copy; Your Website 2018</p>
       </div>
     </footer>
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
 
     <!-- Bootstrap core JavaScript -->
     <script src="${context}/resources/vendor/jquery/jquery.min.js"></script>
     <script src="${context}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="${context}/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="${context}/resources/js/stylish-portfolio.min.js"></script>
 	<script>
-	$('#login_btn')
+	$('#about_btn')
 	.on('click', function(){
-		alert('로그인 성공');
+		alert('${context}');
 	});
 	</script>
   </body>
 
 </html>
-
+    

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes("context")
 public class HomeController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpSession session, HttpServletRequest request) {
@@ -22,7 +23,16 @@ public class HomeController {
 		logger.info("Welcome home! The Context Path is {}.", context);
 		session.setAttribute("context", context);
 		
-		return "main";
+		return "public:common/content.tiles";
 	}
-	
+	@RequestMapping("/move/{prefix}/{dir}/{page}")
+	public String move(@PathVariable String prefix, @PathVariable String dir, @PathVariable String page) {
+		logger.info("HomeController ::: move() {}.", "ENTER");
+		logger.info("HomeController ::: dir {}", dir);
+		logger.info("HomeController ::: page {}", page);
+		String ret = (prefix.equals("public")) ? 
+				"public:"+dir+"/"+page+".tiles" :
+				 prefix +":"+dir+"/"+page+".tiles";
+		return ret;
+	}
 }
