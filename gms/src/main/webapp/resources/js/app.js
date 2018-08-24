@@ -15,14 +15,14 @@ app = {
 			});
 			$('#login_btn').click(()=>{
 				alert('Login Succes!!!');
-				location.href = app.x()+"/move/retrieve/member/retrieve";
+				location.href = app.x()+"/member/login";
 			});
 			$('#logout').click(()=>{
 				alert('logout...');
-				location.href = app.x();
+				location.href = app.x()+"/member/logout";
 			});
 			$('#join').click(()=>{
-				alert('Add');
+				alert('Join Page');
 				location.href = app.x()+"/move/join/member/add";
 			});
 			$('#join_bth').click(()=>{

@@ -2,10 +2,12 @@ package com.gms.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 @Controller
-@RequestMapping("/Member")
+@RequestMapping("/member")
 public class MemberController {
+	static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	@RequestMapping("/add")
 	public void add() {}
 	@RequestMapping("/list")
@@ -21,9 +23,15 @@ public class MemberController {
 	@RequestMapping("/remove")
 	public void remove() {}
 	@RequestMapping("/login")
-	public void login() {}
+	public String login() {
+		logger.info("MembeController login");
+		return "retrieve:member/retrieve.tiles";
+	}
 	@RequestMapping("/logout")
-	public void logout() {}
+	public String logout() {
+		logger.info("MembeController logout");
+		return "redirect:/";
+	}
 	@RequestMapping("/fileupload")
 	public void fileupload() {}
 }

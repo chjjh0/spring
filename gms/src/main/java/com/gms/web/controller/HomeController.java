@@ -30,9 +30,9 @@ public class HomeController {
 		logger.info("HomeController ::: move() {}.", "ENTER");
 		logger.info("HomeController ::: dir {}", dir);
 		logger.info("HomeController ::: page {}", page);
-		String ret = (prefix.equals("public")) ? 
+		String ret = "";
+		return ret = (prefix.equals("public")) ? 
 				"public:"+dir+"/"+page+".tiles" :
-				 prefix +":"+dir+"/"+page+".tiles";
-		return ret;
+					 prefix +":"+dir+"/"+page+".tiles";
 	}
 }
