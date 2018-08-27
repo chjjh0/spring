@@ -10,5 +10,5 @@ public class ImageDTO {
 				imgseq,
 				imgName, 
 				extension,
-				memberId;
+				memberId; 
 }
