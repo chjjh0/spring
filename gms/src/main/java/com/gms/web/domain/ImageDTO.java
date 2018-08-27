@@ -9,6 +9,6 @@ public class ImageDTO {
 	private String 
 				imgseq,
 				imgName, 
-				extension,
+				extension, 
 				memberId; 
 }
