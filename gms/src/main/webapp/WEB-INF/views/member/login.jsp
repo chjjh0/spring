@@ -4,7 +4,7 @@
 	<h2>LOGIN</h2>	
 	<form id="loginForm" name="loginForm">
 		ID <br>
-		<input type="text" name="userid" ><br>
+		<input type="text" name="memberId" ><br>
 		Pass <br>
 		<input type="text" name="pass"  ><br>
 		<input type="hidden" name="action" value="login"/>

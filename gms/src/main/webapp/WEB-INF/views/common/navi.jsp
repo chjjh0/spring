@@ -16,13 +16,16 @@
               </a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="${context}/resources/html/about.html" id="about_btn">About</a>
+              <a class="nav-link text-uppercase text-expanded" id="search">Search</a>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" id="login">Login</a>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" id="join">Join</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" id="join">Admin</a>
             </li>
           </ul>
         </div>

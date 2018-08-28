@@ -12,7 +12,8 @@ public interface MemberService {
 	public MemberDTO retrieve(Map<?,?>p);
 	public int count(Map<?,?>p);
 	public void modify(Map<?,?>p);
-	public void remove(Map<?,?>p);
+	//public void remove(Map<?,?>p);
+	public void remove(MemberDTO p);
 	public boolean login(Map<?,?>p);
 	
 }

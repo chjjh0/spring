@@ -25,7 +25,7 @@ public class HomeController {
 		
 		return "public:common/content.tiles";
 	}
-	@RequestMapping("/move/{prefix}/{dir}/{page}")
+	@RequestMapping(value = "/move/{prefix}/{dir}/{page}", method = {RequestMethod.GET, RequestMethod.POST})
 	public String move(@PathVariable String prefix, @PathVariable String dir, @PathVariable String page) {
 		logger.info("HomeController ::: move() {}.", "ENTER");
 		logger.info("HomeController ::: dir {}", dir);

@@ -12,6 +12,7 @@ public interface MemberDAO {
 	public MemberDTO selectOne(Map<?,?>p);
 	public int count(Map<?,?>p);
 	public void update(Map<?,?>p);
-	public void remove(Map<?,?>p);
+	public void remove(MemberDTO p);
+	//public void remove(Map<?,?>p);
 	public boolean login(Map<?,?>p);
 }
