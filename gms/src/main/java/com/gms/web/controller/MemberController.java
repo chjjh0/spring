@@ -41,11 +41,12 @@ public class MemberController {
 	public void count() {}
 	@RequestMapping("/modify")
 	public void modify() {}
-	@RequestMapping(value="/remove", method={RequestMethod.GET, RequestMethod.POST})
-	public String remove(@ModelAttribute("member") MemberDTO member, Model model) {
+	@RequestMapping(value="/remove/{id}", method={RequestMethod.GET, RequestMethod.POST})
+	public String remove(@PathVariable String id, @ModelAttribute("member") MemberDTO member, Model model) {
 		System.out.println("MemberController_remove");
 		System.out.println("Pass is "+member.getPass());
-		System.out.println();
+		System.out.println("Id is "+id);
+		member.setMemberId(id);
 		memberService.remove(member);
 		return "redirect:/";
 	}

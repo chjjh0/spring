@@ -46,7 +46,7 @@ app = {
 			$('#remove_btn').click(()=>{
 				alert('remove_btn');
 				$('#removeForm').attr({
-				    action:app.x()+"/member/remove/",
+				    action:app.x()+"/member/remove/"+app.user.get('user'),
 				    method:"POST"
 				}).submit();
 			});

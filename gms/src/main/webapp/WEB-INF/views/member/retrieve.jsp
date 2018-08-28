@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div id="content-box">
+<html>
+<head>
+<script src="${context}/resources/js/app.js"></script>
+</head>
+<body>
 	<table>
 		<tr>
 			<td rowspan="3">
@@ -33,4 +38,8 @@
 		<a id="moveRemoveForm">회원탈퇴</a> &nbsp; &nbsp; &nbsp;
 		<a id="logout">로그아웃</a>
 </div>
-
+<script>
+app.user.set('${user.memberId}');
+</script>
+</body>
+</html>
