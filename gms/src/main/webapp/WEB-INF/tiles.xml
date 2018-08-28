@@ -29,4 +29,9 @@
 		<put-attribute name="navi" value="/WEB-INF/views/{1}/navi.jsp"/>
 		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>
+	<definition name="search:*/*.tiles" extends="public">
+		<put-attribute name="header" value=""/>
+		<put-attribute name="navi" value="/WEB-INF/views/{1}/search_navi.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
 </tiles-definitions>

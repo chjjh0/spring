@@ -5,13 +5,13 @@
 <script src="${context}/resources/js/app.js"></script>
 </head>
 <body>
-	<table>
+	<table id="retrieveForm">
 		<tr>
 			<td rowspan="3">
 				<img id="profile" src="${img}${profile}" />
 			</td>
 			<td>아이디</td>
-			<td colspan="2">${user.memberId}</td>
+			<td id="retrieveMemberId" colspan="2">${user.memberId}</td>
 		</tr>
 		<tr>
 			<td>이름</td>

@@ -28,6 +28,7 @@ public class HomeController {
 	@RequestMapping(value = "/move/{prefix}/{dir}/{page}", method = {RequestMethod.GET, RequestMethod.POST})
 	public String move(@PathVariable String prefix, @PathVariable String dir, @PathVariable String page) {
 		logger.info("HomeController ::: move() {}.", "ENTER");
+		logger.info("HomeController ::: prefix {}", prefix);
 		logger.info("HomeController ::: dir {}", dir);
 		logger.info("HomeController ::: page {}", page);
 		String ret = "";

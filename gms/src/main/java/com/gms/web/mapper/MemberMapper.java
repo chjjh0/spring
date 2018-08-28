@@ -61,7 +61,7 @@ public class MemberMapper implements MemberDAO{
 		System.out.println("memberId : "+p.getMemberId());
 		SqlSession sqlSession = factory.openSession();
 		sqlSession.delete(ns+".delete",p);
-		System.out.println("MemberMapper_insert_complete");
+		System.out.println("MemberMapper_remove_complete");
 	}
 
 	@Override

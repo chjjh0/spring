@@ -9,6 +9,23 @@ app = {
 		onCreate : ()=>{
 			console.log("step3");
 			app.setContentView();
+			/* join */
+			$('#join').click(()=>{
+				alert('Join Page');
+				location.href = app.x()+"/move/join/member/add";
+			});
+			$('#join_bth').click(()=>{
+				alert('join_btn');
+				$('#joinForm').attr({
+				    action:app.x()+"/member/add",
+				    method:"POST"
+				}).submit();
+			});
+			/* search */
+			$('#search').click(()=>{
+				alert('Search Page');
+				location.href = app.x()+"/move/search/member/search_navi";
+			});
 			/* login */
 			$('#login').click(()=>{
 				alert('Login Page');
@@ -26,17 +43,15 @@ app = {
 				alert('logout...');
 				location.href = app.x()+"/member/logout";
 			});
-			/* join */
-			$('#join').click(()=>{
-				alert('Join Page');
-				location.href = app.x()+"/move/join/member/add";
-			});
-			$('#join_bth').click(()=>{
-				alert('join_btn');
-				$('#joinForm').attr({
-				    action:app.x()+"/member/add",
+			
+			/* update */
+			$('#moveUpdateForm').click(()=>{
+				alert('Update Page');
+				$('#retrieveForm').attr({
+					action:app.x()+"/move/join/member/modify",
 				    method:"POST"
 				}).submit();
+				/*location.href = app.x()+"/move/join/member/modify";*/
 			});
 			/* remove */
 			$('#moveRemoveForm').click(()=>{
@@ -50,13 +65,7 @@ app = {
 				    method:"POST"
 				}).submit();
 			});
-			/* search 수정중*/
-			$('#search').click(()=>{
-				$('#joinForm').attr({
-				    action:app.x()+"/member/add",
-				    method:"POST"
-				}).submit();
-			});
+			
 		},
 		setContentView : ()=>{
 			console.log("step4 : "+ app.j());

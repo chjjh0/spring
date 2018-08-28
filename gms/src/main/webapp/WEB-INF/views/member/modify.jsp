@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+<head>
+<script src="${context}/resources/js/app.js"></script>
+</head>
+<body>
 <div id="content-box">
 	<form id="updateForm" name="updateForm">
 	<table>
@@ -8,7 +13,8 @@
 			</td>
 			
 			<td>아이디</td>
-			<td colspan="2">${user.memberId}</td>
+			<td colspan="2"><script>app.user.get('user')</script></td>
+			<%-- <td colspan="2">${user.memberId}</td> --%>
 		</tr>
 		<tr>
 			<td>이름</td>
@@ -54,4 +60,6 @@
 <form method="POST" enctype="multipart/form-data" action="${context}/member.do?action=fileupload&page=retrieve&userid=${user.memberId}">
   파일 업로드: <input type="file" name="upfile"><br/>
   <input type="submit" value="파일업로드">
-</form> 
+</form>
+</body> 
+</html>
