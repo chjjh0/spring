@@ -28,7 +28,7 @@
 	SET PASS = #{pass}, 
 	TEAMID = #{teamId},
 	ROLL = #{roll}
-	WHERE MEMBERID LIKE #{memberId};
+	WHERE MEMBERID LIKE #{memberId}
   </update>
   <!-- LOGIN -->
   <select id="selectOne" resultType="com.gms.web.domain.MemberDTO">

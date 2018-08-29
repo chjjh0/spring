@@ -2,10 +2,13 @@
 <html>
 <head>
 <script src="${context}/resources/js/app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="${context}/resources/vendor/jquery/jquery.min.js"></script>
+
 </head>
 <body>
 <div id="content-box">
-	<form id="modifyForm" name="namemodifyForm">
+	<form id="modifyForm" name="modifyForm">
 	<table>
 		<tr>
 			<td rowspan="3">
@@ -13,7 +16,8 @@
 			</td>
 			
 			<td>아이디</td>
-			<td colspan="2">${user.memberId}1</td>
+			<td colspan="2" id="memberId" value="1"></td>
+			<%-- ${user.memberId} --%>
 			<%-- <td colspan="2">${user.memberId}</td> --%>
 		</tr>
 		<tr>
@@ -22,20 +26,20 @@
 		</tr>
 		<tr>
 			<td><a id="moveUpdateForm">비밀번호</a></td>
-			<td colspan="2"><input type="text" name="newPass" placeholder="${user.pass}"/></td>
+			<td colspan="2"><input type="text" name="pass" placeholder="${user.pass}"/></td>
 		</tr>
 		<tr>
 			<td>나이</td>
 			<td>${user.age}</td>
 			<td><a id="moveUpdateTeamForm">팀명</a></td>
 			<td>
-				<input type="radio" name="teamid" id="ateam"
+				<input type="radio" name="teamId" id="ateam"
 					value="ateam" />걍놀자
-				<input type="radio" name="teamid" id="hteam"
+				<input type="radio" name="teamId" id="hteam"
 					value="hteam" />지은이네
-				<input type="radio" name="teamid" id="steam"
+				<input type="radio" name="teamId" id="steam"
 					value="steam" />왕거북이
-				<input type="radio" name="teamid" id="cteam"
+				<input type="radio" name="teamId" id="cteam"
 					value="cteam" />코딩짱 
 			</td>
 		</tr>
@@ -54,6 +58,7 @@
 		</td>
 		</tr>
 	</table>
+	<input type="hidden" name="memberId" value="${user.memberId}"/>
 	<input id="modify_bth" type="button" value="수정" />
 	</form>
 </div>
@@ -61,5 +66,10 @@
   파일 업로드: <input type="file" name="upfile"><br/>
   <input type="submit" value="파일업로드">
 </form>
+<script>
+alert($('input:hidden').val());
+$('#memberId').val('2');
+app.user.set('${user.memberId}');
+</script>
 </body> 
 </html>

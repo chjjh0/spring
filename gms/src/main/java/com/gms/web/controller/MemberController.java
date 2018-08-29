@@ -47,9 +47,12 @@ public class MemberController {
 	@RequestMapping(value="/modify", method={RequestMethod.GET, RequestMethod.POST})
 	public String modify(@ModelAttribute("member") MemberDTO member) {
 		System.out.println("MemberController_modify");
-		System.out.println("name is "+member.getName());
-		memberService.add(member);
-		System.out.println("MemberController_add_complete");
+		System.out.println("memberId is "+member.getMemberId());
+		System.out.println("pass is "+member.getPass());
+		System.out.println("teamId is "+member.getTeamId());
+		System.out.println("roll is "+member.getRoll());
+		memberService.modify(member);
+		System.out.println("MemberController_modify_complete");
 		return "redirect:/move/login/member/login";
 	}
 	@RequestMapping(value="/remove/{id}", method={RequestMethod.GET, RequestMethod.POST})
