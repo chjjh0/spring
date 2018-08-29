@@ -34,7 +34,7 @@
 		<td>${user.roll}</td>
 		</tr>
 	</table>
-		<a id="moveUpdateForm">정보수정</a> &nbsp; &nbsp; &nbsp;
+		<a id="moveModifyForm">정보수정</a> &nbsp; &nbsp; &nbsp;
 		<a id="moveRemoveForm">회원탈퇴</a> &nbsp; &nbsp; &nbsp;
 		<a id="logout">로그아웃</a>
 </div>

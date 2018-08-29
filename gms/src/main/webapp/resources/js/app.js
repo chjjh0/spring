@@ -15,7 +15,7 @@ app = {
 				location.href = app.x()+"/move/join/member/add";
 			});
 			$('#join_bth').click(()=>{
-				alert('join_btn');
+				alert('join_btn!!!');
 				$('#joinForm').attr({
 				    action:app.x()+"/member/add",
 				    method:"POST"
@@ -43,15 +43,17 @@ app = {
 				alert('logout...');
 				location.href = app.x()+"/member/logout";
 			});
-			
-			/* update */
-			$('#moveUpdateForm').click(()=>{
-				alert('Update Page');
-				$('#retrieveForm').attr({
-					action:app.x()+"/move/join/member/modify",
+			/* modify */
+			$('#moveModifyForm').click(()=>{
+				alert('Modify Page');
+				location.href = app.x()+"/member/retrieve";
+			});
+			$('#modify_bth').click(()=>{
+				alert('modify_bth!!!');
+				$('#modifyForm').attr({
+				    action:app.x()+"/member/modify",
 				    method:"POST"
 				}).submit();
-				/*location.href = app.x()+"/move/join/member/modify";*/
 			});
 			/* remove */
 			$('#moveRemoveForm').click(()=>{

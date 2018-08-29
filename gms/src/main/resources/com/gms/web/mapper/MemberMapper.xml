@@ -22,6 +22,14 @@
 	        #{pass},
 	        '1')
   </insert>
+  <!-- UPDATE -->
+  <update id="update" parameterType="com.gms.web.domain.MemberDTO">
+    UPDATE MEMBER 
+	SET PASS = #{pass}, 
+	TEAMID = #{teamId},
+	ROLL = #{roll}
+	WHERE MEMBERID LIKE #{memberId};
+  </update>
   <!-- LOGIN -->
   <select id="selectOne" resultType="com.gms.web.domain.MemberDTO">
     SELECT * FROM MEMBER 

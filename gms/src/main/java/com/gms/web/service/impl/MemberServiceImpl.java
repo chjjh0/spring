@@ -41,9 +41,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public void modify(Map<?, ?> p) {
-		// TODO Auto-generated method stub
-		
+	public MemberDTO modify(MemberDTO p) {
+		return memberDAO.update(p);
 	}
 
 	@Override

@@ -40,6 +40,7 @@ public class MemberMapper implements MemberDAO{
 	public MemberDTO selectOne(Map<?, ?> p) {
 		System.out.println("MemberMapper_selectOne");
 		SqlSession sqlSession = factory.openSession();
+		System.out.println("MemberMapper_selectOne_complete");
 		return (MemberDTO) sqlSession.selectOne(ns+".selectOne",p);
 	}
 
@@ -50,8 +51,13 @@ public class MemberMapper implements MemberDAO{
 	}
 
 	@Override
-	public void update(Map<?, ?> p) {
-		// TODO Auto-generated method stub
+	public MemberDTO update(MemberDTO p) {
+		System.out.println("MemberMapper_update");
+		System.out.println("memberId : "+p.getMemberId());
+		SqlSession sqlSession = factory.openSession();
+		sqlSession.update(ns+".update",p);
+		System.out.println("MemberMapper_update_complete");
+		return null;
 		
 	}
 

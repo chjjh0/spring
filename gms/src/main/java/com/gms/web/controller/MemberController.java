@@ -36,11 +36,22 @@ public class MemberController {
 	@RequestMapping("/search")
 	public void search() {}
 	@RequestMapping("/retrieve")
-	public void retrieve() {}
+	public String retrieve(Model model) {
+		System.out.println("MemberController_retrieve");
+		System.out.println("getName(): "+member.getName());
+		model.addAttribute("user", member);
+		return "modify:member/modify.tiles";
+	}
 	@RequestMapping("/count")
 	public void count() {}
-	@RequestMapping("/modify")
-	public void modify() {}
+	@RequestMapping(value="/modify", method={RequestMethod.GET, RequestMethod.POST})
+	public String modify(@ModelAttribute("member") MemberDTO member) {
+		System.out.println("MemberController_modify");
+		System.out.println("name is "+member.getName());
+		memberService.add(member);
+		System.out.println("MemberController_add_complete");
+		return "redirect:/move/login/member/login";
+	}
 	@RequestMapping(value="/remove/{id}", method={RequestMethod.GET, RequestMethod.POST})
 	public String remove(@PathVariable String id, @ModelAttribute("member") MemberDTO member, Model model) {
 		System.out.println("MemberController_remove");
@@ -59,9 +70,10 @@ public class MemberController {
 		Map<String, String> p = new HashMap<>();
 		p.put("memberId", id);
 		p.put("pass", pass);
-		MemberDTO m = memberService.retrieve(p);
-		System.out.println("getName(): "+m.getName());
-		model.addAttribute("user", m);
+		member = memberService.retrieve(p);
+		/*MemberDTO m = memberService.retrieve(p);*/
+		System.out.println("getName(): "+member.getName());
+		model.addAttribute("user", member);
 		return "retrieve:member/retrieve.tiles";
 	}
 	@RequestMapping("/logout")

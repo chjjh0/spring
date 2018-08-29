@@ -5,7 +5,7 @@
 </head>
 <body>
 <div id="content-box">
-	<form id="updateForm" name="updateForm">
+	<form id="modifyForm" name="namemodifyForm">
 	<table>
 		<tr>
 			<td rowspan="3">
@@ -13,7 +13,7 @@
 			</td>
 			
 			<td>아이디</td>
-			<td colspan="2"><script>app.user.get('user')</script></td>
+			<td colspan="2">${user.memberId}1</td>
 			<%-- <td colspan="2">${user.memberId}</td> --%>
 		</tr>
 		<tr>
@@ -54,7 +54,7 @@
 		</td>
 		</tr>
 	</table>
-	<input id="updateBtn" type="button" value="수정" />
+	<input id="modify_bth" type="button" value="수정" />
 	</form>
 </div>
 <form method="POST" enctype="multipart/form-data" action="${context}/member.do?action=fileupload&page=retrieve&userid=${user.memberId}">
