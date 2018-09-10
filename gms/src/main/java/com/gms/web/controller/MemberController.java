@@ -1,0 +1,84 @@
+package com.gms.web.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
+
+import com.gms.web.domain.MemberDTO;
+import com.gms.web.service.MemberService;
+@Controller
+@RequestMapping("/member")
+@SessionAttributes("member")
+public class MemberController {
+	static final Logger logger = LoggerFactory.getLogger(MemberController.class);
+	@Autowired MemberDTO member;
+	@Autowired MemberService memberService;
+	@RequestMapping(value="/add", method={RequestMethod.GET, RequestMethod.POST})
+	public String add(@ModelAttribute("member") MemberDTO member) {
+		System.out.println("MemberController_add");
+		System.out.println("name is "+member.getName());
+		memberService.add(member);
+		System.out.println("MemberController_add_complete");
+		return "redirect:/move/login/member/login";
+	}
+	@RequestMapping("/list")
+	public void list() {}
+	@RequestMapping("/search")
+	public void search() {}
+	@RequestMapping("/retrieve")
+	public String retrieve(Model model) {
+		System.out.println("MemberController_retrieve");
+		System.out.println("getName(): "+member.getName());
+		model.addAttribute("member", member);
+		return "modify:member/modify.tiles";
+	}
+	@RequestMapping("/count")
+	public void count() {}
+	@RequestMapping(value="/modify", method={RequestMethod.GET, RequestMethod.POST})
+	public String modify(@ModelAttribute("mem") MemberDTO mem,Model model) {
+		System.out.println("MemberController_modify");
+		System.out.println("memberId is "+mem.getMemberId());
+		System.out.println("pass is "+mem.getPass());
+		System.out.println("teamId is "+mem.getTeamId());
+		System.out.println("roll is "+mem.getRoll());
+		memberService.modify(mem);
+		model.addAttribute("member", memberService.retrieve(mem));
+		/*memberService.modify(mem);
+		model.addAttribute("member", memberService.retrieve(mem));*/
+		return "redirect:/member/retrieve.tiles";
+	}
+	@RequestMapping(value="/remove/{id}", method={RequestMethod.GET, RequestMethod.POST})
+	public String remove(@PathVariable String id, @ModelAttribute("member") MemberDTO member, Model model) {
+		System.out.println("MemberController_remove");
+		System.out.println("Pass is "+member.getPass());
+		System.out.println("Id is "+id);
+		member.setMemberId(id);
+		memberService.remove(member);
+		return "redirect:/";
+	}
+	@RequestMapping("/login")
+	public String login(@ModelAttribute("mem") MemberDTO mem,Model model) {
+		System.out.println("MemberControll_login");
+		System.out.println("ID: "+mem.getMemberId());
+		System.out.println("PASS: "+mem.getPass());
+		MemberDTO m = memberService.login(mem);
+		if(m != null) model.addAttribute("member", m);
+		return "retrieve:member/retrieve.tiles";
+	}
+	@RequestMapping("/logout")
+	public String logout(SessionStatus sessionStatus) {
+		logger.info("MembeController logout");
+		sessionStatus.setComplete();
+		return "redirect:/";
+	}
+	@RequestMapping("/fileupload")
+	public void fileupload() {}
+}
